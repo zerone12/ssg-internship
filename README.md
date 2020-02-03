@@ -6,7 +6,8 @@
  - 스스로 학습하기 버거운 경우 도움을 요청하세요.
  
 # 첫 번째 Mission
- - 본 프로젝트를 pull 한 후 DemoApplication 클래스의 main 메소드를 실행하면 Spring Boot 어플리케이션이 기동합니다.
+ - 프로젝트를 pull 한 후 Maven 관련 오류를 해결합니다. 
+ - DemoApplication 클래스의 main 메소드를 실행하면 Spring Boot 어플리케이션이 기동합니다.
  - 기동이 실패하면 로그를 확인해보고 적절한 조치를 취해서 성공적으로 어플리케이션을 구동하고 console에 "Hello Spring Boot!" 로그를 남겨보세요
  - (Hint) Spring Boot Data JDBC 가 maven dependency에 있으면 자동으로 DB 연결을 구성합니다.
  - (Hint) 적절한 DB 연결설정을 하거나 DB 자동연결설정을 해제해도 무방합니다.
