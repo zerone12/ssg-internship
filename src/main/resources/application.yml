@@ -1,0 +1,14 @@
+server:
+    address: localhost
+    port: 8080
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: study
+        url: jdbc:mysql://localhost:3306/studydb?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+        username: study
+    jpa:
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        generate-ddl: true
+        show-sql: true
