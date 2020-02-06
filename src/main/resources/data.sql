@@ -20,13 +20,12 @@ CREATE TABLE PRODUCTS (
 );
 
 CREATE TABLE ORDERS (
-  order_id INT NOT NULL,
-  user_id INT,
-  product_id INT,
+  user_id INT NOT NULL,
+  product_id INT NOT NULL,
   quantity INT NOT NULL,
-  PRIMARY KEY (order_id, user_id),
   FOREIGN KEY (user_id) REFERENCES USERS(user_id),
-  FOREIGN KEY (product_id) REFERENCES PRODUCTS(product_id)
+  FOREIGN KEY (product_id) REFERENCES PRODUCTS(product_id),
+  PRIMARY KEY (user_id, product_id)
 );
 
 INSERT INTO USERS (first_name,last_name,email,city,street,zip_code) VALUES ('Xenos','Reeves','a.purus@ultricesVivamusrhoncus.ca','Amroha','218-5806 Magna Avenue','893833'),('Ishmael','Thompson','ad.litora@diam.org','Sandy','P.O. Box 573, 3997 Faucibus Road','7604'),('Ian','Carr','Proin@Inatpede.net','Bad Nauheim','6234 Pede, St.','89354'),('Neve','Dorsey','eget.mollis@bibendumsedest.ca','Campagna','447-3090 Tellus. St.','60100'),('David','Joyner','posuere.at.velit@Crassed.net','Puerto Colombia','Ap #727-1829 Sed Rd.','47353'),('Austin','May','pharetra.ut@sagittis.co.uk','Calvello','465-2170 Suspendisse St.','493830'),('Diana','Love','odio.Aliquam@Donecsollicitudinadipiscing.co.uk','Rouvreux','334-9697 Velit. Street','5485'),('Leo','Reilly','Praesent.eu@Donec.ca','Tontelange','637-775 At Av.','96236'),('Angelica','Cooke','ac.mi.eleifend@Nullamlobortisquam.org','Forio','870-2621 Ante Rd.','13069'),('Destiny','Parks','accumsan.sed@posuere.co.uk','Valenciennes','Ap #702-8834 Pede Ave','28284');
