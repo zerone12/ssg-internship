@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="UTF-8">
+	<title>order</title>
+</head>
+<body>
+	<div class="container">
+		<div class="half">
+			<h2>로그인</h2>
+			<form method="post" action="/login">
+				<input type="text" name="name" />
+				<input type="password" name="password" />
+			</form>
+		</div>
+		<div class="half">
+			<h2>가입</h2>
+			<form method="post" action="/join">
+				<input type="text" name="name" />
+				<input type="password" name="password" />				
+			</form>			
+		</div>
+	</div>
+</body>
+</html>

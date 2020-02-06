@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -16,8 +17,9 @@ import lombok.ToString;
 @ToString
 @Getter
 @Entity
-public class Order {
+public class Jumun {
 	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
@@ -28,7 +30,7 @@ public class Order {
 	private Long productId;
 	
 	@Builder
-	public Order(Long customerId, Long productId) {
+	public Jumun(Long customerId, Long productId) {
 		this.customerId = customerId;
 		this.productId = productId;
 	}

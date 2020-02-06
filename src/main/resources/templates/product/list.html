@@ -12,7 +12,7 @@
 			<table>
 				<thead>
 					<tr>
-						<td>상품명test</td>
+						<td>상품명</td>
 						<td>가격</td>
 						<td>재고</td>
 						<td>선택</td>
@@ -23,7 +23,7 @@
 						<td th:text="${product.name}"></td>
 						<td th:text="${product.price}"></td>
 						<td th:text="${product.stock}"></td>
-						<td><input type="checkbox" name="checked" th:value=${product.id}/></td>
+						<td><input type="checkbox" name="checked" th:value="${product.id}" /></td>
 					</tr>
 				</tbody>
 			</table>
