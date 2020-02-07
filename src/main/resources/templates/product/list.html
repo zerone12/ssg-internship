@@ -4,23 +4,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta charset="UTF-8">
 	<title>Products</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
-	<div class="container">
-		<h2>제품 목록</h2>
-		<form method="post" action="/product/order">
-			<table>
-				<thead>
+	<div class="container list">
+		<h2 th:text="${name}+'님의 주문'"></h2>		
+		<h3>제품 목록</h3>
+		<!-- <form th:action="@{'/mycontroller/' + ${type}}"> -->
+		<form method="post" th:action="@{'/product/order/'+${name}}">
+			<table class="table table-hover">
+				<thead class="thead-light">
 					<tr>
-						<td>상품명</td>
-						<td>가격</td>
-						<td>재고</td>
-						<td>선택</td>
+						<th scope="col">상품명</th>
+						<th scope="col">가격</th>
+						<th scope="col">재고</th>
+						<th scope="col">선택</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="product : ${productList}">
-						<td th:text="${product.name}"></td>
+						<th scope="row" th:text="${product.name}"></th>
 						<td th:text="${product.price}"></td>
 						<td th:text="${product.stock}"></td>
 						<td><input type="checkbox" name="checked" th:value="${product.id}" /></td>

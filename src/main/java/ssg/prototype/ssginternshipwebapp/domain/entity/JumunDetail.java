@@ -21,21 +21,18 @@ import lombok.ToString;
 @ToString
 @Getter
 @Entity
-@IdClass(JumunId.class)
-public class Jumun implements Serializable {
-	@Id
-	private Long customerId;
+@IdClass(JumunDetailId.class)
+public class JumunDetail implements Serializable {
 
 	@Id
 	private int orderId;
 	
-	@Column
-	private String orderedDate;
+	@Id
+	private Long productId;
 	
 	@Builder
-	public Jumun(Long customerId, int orderId, String orderedDate) {
-		this.customerId = customerId;
+	public JumunDetail(int orderId, Long productId) {
 		this.orderId = orderId;
-		this.orderedDate = orderedDate;
+		this.productId = productId;
 	}
 }

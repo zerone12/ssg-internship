@@ -1,6 +1,7 @@
 package ssg.prototype.ssginternshipwebapp.service;
 
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -17,11 +18,9 @@ public class OrderService {
 		this.orderRepository = orderRepository;
 	}
 	
-	public void saveOrder(Long customerId, List<Product> ordered) {
-		List<Jumun> orders = new ArrayList<Jumun>();
-		for(Product product : ordered) {
-			orders.add(new Jumun(customerId, product.getId()));
-		}
-		orderRepository.saveAll(orders);
+	public void saveOrder(Long customerId, int orderId) {
+		SimpleDateFormat format = new SimpleDateFormat("E MMM dd HH:mm:ss");
+		String time = format.format(new Date());
+		orderRepository.save(new Jumun(customerId, orderId, time));
 	}
 }
