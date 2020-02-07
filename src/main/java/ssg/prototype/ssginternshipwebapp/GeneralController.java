@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class HelloController {
-	private static final String template = "Hello %s!";
+public class GeneralController {
 	//private final AtomicLong counter = new AtomicLong();
 	
-	@GetMapping({"/", "/greeting"})
-	public String greeting(Model model, @RequestParam(value = "name", defaultValue = "World") String name) {
-		model.addAttribute("name", name);
-		return "hello";
-		//return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	@GetMapping("/")
+	public String getIndex(Model model) {
+		return "index";
 	}
 }

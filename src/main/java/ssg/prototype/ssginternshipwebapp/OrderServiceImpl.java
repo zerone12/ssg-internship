@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
 			update.setQuantity(order.getQuantity());
 			return update;
 		} else {
-			return null;
+			return rep.save(order);
 		}
 	}
 
